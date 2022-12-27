@@ -13,4 +13,19 @@ export class QuestionsService {
   findAll(): Promise<questions[]> {
     return this.quesRepository.find();
   }
+  createQuestion(question, ans, timer) {
+    const obj = {
+      question,
+      ans,
+      timer,
+    };
+    return this.quesRepository.save(obj);
+  }
+  deleteQuestion(id: number) {
+    this.quesRepository.delete(id);
+  }
+
+  findOne(id: number) {
+    return this.quesRepository.findOneBy({ id });
+  }
 }
