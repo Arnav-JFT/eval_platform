@@ -7,11 +7,14 @@ import { User } from './users/users.entity';
 import { UsersModule } from './users/users.module';
 import { QuestionsModule } from './questions/questions.module';
 import { questions } from './questions/questions.entity';
+import { AbilityModule } from './ability/ability.module';
+import { UsersService } from './users/users.services';
 
 @Module({
   imports: [
     UsersModule,
     QuestionsModule,
+    AbilityModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
