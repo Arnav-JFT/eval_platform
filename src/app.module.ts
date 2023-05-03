@@ -3,15 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GoogleStrategy } from './google.strategy';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './users/users.entity';
-import { UsersModule } from './users/users.module';
-import { QuestionsModule } from './questions/questions.module';
-import { questions } from './questions/questions.entity';
 
 @Module({
   imports: [
-    UsersModule,
-    QuestionsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -19,7 +13,7 @@ import { questions } from './questions/questions.entity';
       username: 'code',
       password: 'OfwVH7VbQrO(rG3O',
       database: 'code',
-      entities: [User, questions],
+      entities: [],
       synchronize: true,
     }),
   ],
